@@ -1,3 +1,12 @@
-body{
+body {
 padding-top: 70px;
+}
+
+.color-white {
+    color: white;
+}
+
+
+.full-width {
+    width: 100%;
 }
