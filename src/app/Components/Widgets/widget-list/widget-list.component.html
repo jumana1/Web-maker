@@ -1,22 +1,21 @@
  <!-- Navbar -->
  <nav class="navbar navbar-light fixed-top bg-light">
-  <a class="color-black" href="../Page/Page-list.html"><i 
+  <a class="color-black" routerLink="/user/:uid/website/:wid/page"><i 
  class="fas fa-chevron-left"></i></a>
  <a class="navbar-brand" 
- href="Widget-list.html">Widgets</a>
- <a class="color-black" href="Widget-choose.html"><i class="fas fa-plus"></i></a>
+ routerLink="/user/:uid/website/:wid/page/:pid/widget  ">Widgets</a>
+ <a class="color-black" routerLink="/user/:uid/website/:wid/page/:pid/widget/new"><i class="fas fa-plus"></i></a>
  </nav>
 
 <!-- Main Content -->
 <div class="container-fluid">
 <!-- Heading Widget -->
 <div>
-<!-- icons -->
+<!-- Icons -->
 <div class="absolute-right">
-<a href="#"><i class="fas 
-fa-cog"></i></a>
-<a href="#"><i class="fas
-  fa-bars"></i></a>
+<a routerlink="/user/:uid/website/:wid/page/:pid/widget/:wgid "><i class="fas fa-cog"></i></a>
+<a routerLink="/user/:uid/website/:wid/page/:pid/widget
+"><i class="fas fa-bars"></i></a>
 </div>
 <!-- Content -->
 <div>
@@ -25,26 +24,25 @@ fa-cog"></i></a>
 </div>
 <!-- Heading Widget -->
 <div>
-  <!-- icons -->
+  <!-- Icons -->
   <div class="absolute-right">
-      <a href="#"><i class="fas 
+      <a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid "><i class="fas 
           fa-cog"></i></a>
-          <a href="#"><i class="fas
-              fa-bars"></i></a>
+          <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas fa-bars"></i></a>
            </div>
           <!-- Content -->
           <div>
               <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem ipsum rerum beatae! Nihil </h3>
           </div>
       </div>
-      <!-- Imaging Widget -->
+      <!-- Image Widget -->
   <div>
-  <!-- icons -->
+  <!-- Icons -->
   <div class="absolute-right">
-      <a href="#"><i class="fas 
+      <a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"><i class="fas 
           fa-cog"></i></a>
-          <a href="#"><i class="fas
-              fa-bars"></i></a>
+          <a routerLink="/user/:uid/website/:wid/page/:pid/widget"><i class="fas 
+            fa-bars"></i></a>
            </div>
           <!-- Content -->
           <div>
@@ -55,26 +53,22 @@ fa-cog"></i></a>
       </div>
       <!-- Heading Widget -->
    <div>
-  <!-- icons -->
+  <!-- Icons -->
   <div class="absolute-right">
-      <a href="#"><i class="fas 
-          fa-cog"></i></a>
-          <a href="#"><i class="fas
-              fa-bars"></i></a>
+      <a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wid"><i class="fas fa-cog"></i></a>
+          <a routerLink="/user/:uid/website/:wid/page/:pid/widget    "><i class="fas fa-bars"></i></a>
            </div>
           <!-- Content -->
           <div>
-      <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit delectus distinctio explicabo, magni officia <a href="http://www.google.com">voluptas corrupti iusto saepe eveniet</a> aspernatur dolorum. Fuga culpa suscipit cupiditate velit asperiores veniam quos sapiente?</h5>
+      <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit delectus distinctio explicabo, magni officia <a href="http://www.google.com">voluptas corrupti iusto saepe eveniet</a> aspernatur dolorum. Fuga culpa suscipit cupiditate velit asperiores veniam quos sapiente?</h3>
           </div>
       </div>
       <!-- Youtube Widget -->
   <div>
-  <!-- icons -->
+  <!-- Icons -->
   <div class="absolute-right">
-      <a href="#"><i class="fas 
-          fa-cog"></i></a>
-          <a href="#"><i class="fas
-              fa-bars"></i></a>
+      <a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"><i class="fas fa-cog"></i></a>
+          <a routerLink="/user/:uid/website/:wid/page/:pid/widget    "><i class="fas fa-bars"></i></a>
            </div>
           <!-- Content -->
           <div class="embed-responsive embed-responsive-16by9">
@@ -83,12 +77,10 @@ fa-cog"></i></a>
       </div>
       <!-- Heading Widget -->
 <div>
-  <!-- icons -->
+  <!-- Icons -->
   <div class="absolute-right">
-      <a href="#"><i class="fas 
-          fa-cog"></i></a>
-          <a href="#"><i class="fas
-              fa-bars"></i></a>
+    <a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid"><i class="fas fa-cog"></i></a>
+        <a routerLink="/user/:uid/website/:wid/page/:pid/widget    "><i class="fas fa-bars"></i></a>
            </div>
           <!-- Content -->
           <div>
@@ -100,6 +92,6 @@ fa-cog"></i></a>
 <footer class="navbar navbar-light fixed-bottom bg-light">
   <div class="full-width">    
       <a class="color-black float-right" 
-      href="../User/Profile.html"><i class="fas fa-user"></i></a>
+      routerLink="/user/:uid"><i class="fas fa-user"></i></a>
 </div>
 </footer> 
