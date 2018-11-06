@@ -18,7 +18,8 @@ import { WidgetEditComponent } from './Components/Widgets/widget-edit/widget-edi
 import { WidgetHeadingComponent } from './Components/Widgets/widget-edit/widget-heading/widget-heading.component';
 import { WidgetImageComponent } from './Components/Widgets/widget-edit/widget-image/widget-image.component';
 import { WidgetYoutubeComponent } from './Components/Widgets/widget-edit/widget-youtube/widget-youtube.component';
-import { RouteConfigLoadStart } from '@angular/router';
+
+import { UserService } from "./services/user.service.client";
 
 @NgModule({
   declarations: [
@@ -39,10 +40,8 @@ import { RouteConfigLoadStart } from '@angular/router';
     WidgetImageComponent,
     WidgetYoutubeComponent
   ],
-  imports: [
-    BrowserModule, Routing
-  ],
-  providers: [],
+  imports: [BrowserModule, Routing],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
