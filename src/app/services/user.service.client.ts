@@ -20,7 +20,7 @@ users = [
         ];
 
 createUser(user) {
-    user._id = Math.random().toString;
+    user._id = Math.random().toString();
     this.users.push(user);
     return user;
   }
@@ -45,8 +45,7 @@ findUserByCredentials(username: string, password: string) {
         if (
         this.users[i].username === username && 
         this.users[i].password === password) {
-            
-        return this.users[i];
+         return this.users[i];
         }        
     }
 }

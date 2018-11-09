@@ -1,19 +1,24 @@
 <div class="container">
   <h1>Register</h1>
-  <form>
-      <div class="form-group">
-          <input class="form-control" type="text" 
-          placeholder= "username">
+  <form (ngSubmit)="register()" #myForm="ngForm">
+      <div *ngIf="userError" class="alert alert-danger">This username is taken, please try a different one</div>
+      <div *ngIf="passwordError" class="alert alert-danger">The passwords do not match, please try again</div>
+     <div class="form-group">
+          <input [(ngModel)]="username" required name="username" class="form-control" type="text" placeholder= "Username" #userInput="ngModel">
       </div>
+      <div *ngIf="userInput.invalid && userInput.touched" class="alert alert-warning">Username cannot be empty</div>
       <div class="form-group">
-              <input class="form-control" type="password>"
-              placeholder= "password">
-          </div>
-          <div class="form-group">
-                  <input class="form-control" type="password>" placeholder= "Verify password">
+              <input class="form-control" required name="password" 
+              [(ngModel)]="password" type="password" placeholder="Password" #passwordInput="ngModel">
+         </div>
+         <div *ngIf="passwordInput.invalid && passwordInput.touched" class="alert alert-warning">Password cannot be empty</div>
+          
+         <div class="form-group">
+                  <input class="form-control" required name="verifyPassword" 
+                  [(ngModel)] ="verifyPassword" type="password" placeholder= "Verify password" #verifyPasswordInput="ngModel">
               </div>
-      <a routerLink="/user/:uid" class="btn btn-primary
-      btn-block">Register</a>
+              <div *ngIf="verifyPasswordInput.invalid && verifyPasswordInput.touched" class="alert alert-warning">Please enter the password again</div>
+              <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary btn-block">Register</button>
       <a routerLink="/login" class="btn btn-danger btn-block">Cancel</a>
   </form> 
   </div>
