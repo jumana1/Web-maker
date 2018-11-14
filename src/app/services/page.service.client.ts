@@ -19,7 +19,7 @@ pages = [
       this.pages.push(page);
       return page;
   }
-      findPageByWebsiteId(websiteId) {
+      findPagesByWebsiteId(websiteId) {
             let result = [];
         for (let i = 0; i < this.pages.length; i++) {
             if(this.pages[i].websiteId === websiteId) 
