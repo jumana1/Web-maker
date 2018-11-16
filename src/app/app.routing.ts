@@ -38,7 +38,7 @@ component: PageEditComponent},
 component: WidgetListComponent},
 { path: "user/:uid/website/:wid/page/:pid/widget/new",
 component: WidgetChooserComponent},
-{ path: "user/:uid/website/:wid/page/:pid/widget/:wid",
+{ path: "user/:uid/website/:wid/page/:pid/widget/:wgid",
 component: WidgetEditComponent},
 
 
