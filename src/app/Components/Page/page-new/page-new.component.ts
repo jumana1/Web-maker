@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PageService } from 'src/app/services/page.service.client';
+import { Page } from 'src/app/models/page.model.client';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class PageNewComponent implements OnInit {
    
   }
 createPage() {
-    const page = {
+    const page: Page = {
       name: this.name,
       title: this.title,
       websiteId: this.wid
