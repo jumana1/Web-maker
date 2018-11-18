@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { User } from '../models/user.model.client';
 
 
 // injecting service into module
@@ -12,14 +13,14 @@ export class UserService {
   constructor() { }
 
 
-users = [
+users: User[] = [
         {_id: "123", username: "alice", password: "alice", firstName: "Alice", lastName: "Wonder", email: "alice@gmail.com"},
         {_id: "234", username: "bob", password: "bob", firstName: "Bob", lastName: "Marley", email: "bob@whatever.com"},
         {_id: "345", username: "charly", password: "charly", firstName: "Charly", lastName: "Garcia", email: "charly@hotmail.com"},
          {_id: "456", username: "shiyu", password: "shiyu", firstName: "Shiyu", lastName: "Wang", email: "swang@ulem.org"}
         ];
 
-createUser(user) {
+createUser(user: User) {
     user._id = Math.random().toString();
     this.users.push(user);
     return user;
@@ -50,7 +51,7 @@ findUserByCredentials(username: string, password: string) {
     }
 }
     
-updateUser(user) {
+updateUser(user:User) {
     const oldUser = this.findUserById(user._id);
     const index = this.users.indexOf(oldUser);
     this.users[index] = user;
