@@ -29,11 +29,14 @@ export class WidgetListComponent implements OnInit {
     this.uid = params["uid"];
     this.wid = params["wid"];
     this.pid = params["pid"];
-    this.widgets = this.widgetService.findWidgetsByPageId(this.pid);
-    // console.log(this.widgets)
-  });
+    this.widgetService.findWidgetsByPageId(this.pid)
+    .subscribe((widgets: Widget[]) => {
+      this.widgets = widgets;
+        });
+    });
   }
-parseYouTubeSrc(src) {
+
+  parseYouTubeSrc(src) {
 // Transfer video url into embeded video url
 let embedUrl: string = "https://www.youtube.com/embed/";
 const splitUrl: string[] = src.split("/");

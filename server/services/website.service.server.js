@@ -32,7 +32,7 @@ websites = [
   
   ];
 
-    function createWebsite(req, res) {
+function createWebsite(req, res) {
         let website = req.body;
         website._id = Math.random().toString();
         websites.push(website);

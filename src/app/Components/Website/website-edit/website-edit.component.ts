@@ -12,23 +12,26 @@ export class WebsiteEditComponent implements OnInit {
   websites: Website[];
   uid: string;
   wid: string;
-  website: Website;
+  website: Website = {
+    name: "",
+    description: "",
+    developerId: ""
+};
 
-  
   constructor(
     private websiteService: WebsiteService, 
     private activatedRoute: ActivatedRoute,
     private router: Router
-    ) { }
+    ) {}
  
-
-    ngOnInit() {
+  ngOnInit() {
       this.activatedRoute.params.subscribe(params => {
           this.uid = params["uid"];
           this.wid = params["wid"];
-          this.websiteService.findWebsitesByUser(this.uid)
+          this.websiteService
+          .findWebsitesByUser(this.uid)
           .subscribe((websites: Website[]) => {
-          this.websites = websites;
+            this.websites = websites;
         });
         this.websiteService
         .findWebsiteById(this.wid)

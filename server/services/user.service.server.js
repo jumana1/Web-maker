@@ -32,12 +32,11 @@ module.exports = function(app) {
             res.json(user);
 }
     
-function findUser(req, res) {
+        function findUser(req, res) {
+            const username = req.query["username"];
+            const password = req.query["password"];
    
-    const username = req.query["username"];
-    const password = req.query["password"];
-   
-    if(username && password) {
+        if(username && password) {
         let user;
         for(let i = 0; i < users.length; i++) {
             if (
