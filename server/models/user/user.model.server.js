@@ -26,6 +26,6 @@ function findUserByCredentials(username, password) {
     return UserModel.findOne({ username: username, password: password});
 }
 function updateUser(uid, user) {
-    return UserModel.update({ _id: uid }, user);
+    return UserModel.updateOne({ _id: uid }, user);
 }
 module.exports = UserModel;

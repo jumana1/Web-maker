@@ -32,8 +32,7 @@ const userModel = require("../models/user/user.model.server");
         const username = req.query["username"];
         const password = req.query["password"];
         if(username && password) {
-            const data = await
-            userModel.findUserByCredentials(username, password);
+            const data = await userModel.findUserByCredentials(username, password);
             res.json(data);
             return;
         }
