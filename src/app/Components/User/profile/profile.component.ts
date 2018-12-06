@@ -37,11 +37,12 @@ export class ProfileComponent implements OnInit {
      }
     
     update() {
+      console.log(this.user)
       if (this.user.username === 
       this.oldUsername) {
       this.userService.updateUser(this.user)
         .subscribe((user: User) => {
-            this.userError = false;
+            this.userError = false; 
             this.successFlag = true;
           });
         } else {
