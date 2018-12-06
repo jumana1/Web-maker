@@ -37,7 +37,6 @@ export class ProfileComponent implements OnInit {
      }
     
     update() {
-      console.log(this.user)
       if (this.user.username === 
       this.oldUsername) {
       this.userService.updateUser(this.user)
