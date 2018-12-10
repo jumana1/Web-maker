@@ -34,7 +34,7 @@ export class WebsiteService {
        
       
     findWebsiteById(websiteId: string) {
-        const url = this.baseUrl + "/api/website" + websiteId;
+        const url = this.baseUrl + "/api/website/" + websiteId;
         return this.http.get(url).pipe(
         map((res: Response) => {
             return res.json();
@@ -52,7 +52,7 @@ export class WebsiteService {
     }
 
     deleteWebsite(websiteId: string) {
-        const url = this.baseUrl + "/api/website" + websiteId;
+        const url = this.baseUrl + "/api/website/" + websiteId;
         return this.http.delete(url).pipe(
         map((res: Response) => {
             return res.json();
