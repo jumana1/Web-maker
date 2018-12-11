@@ -1,38 +1,39 @@
 const mongoose = require("mongoose");
 const WidgetSchema = require
-("./widget.schema.server")
-let WebsiteModel = mongoose.model
-("WebsiteModel", WebsiteSchema);
+("./widget.schema.server");
+const WidgetModel = mongoose.model
+("WidgetModel", WidgetSchema);
 
 WidgetModel.createWidget =
-createWidget
+createWidget;
 WidgetModel.findAllWidgetsForPage =
-findAllWidgetsForPage
+findAllWidgetsForPage;
 WidgetModel.findWidgetById =
-findWidgetById
+findWidgetById;
 WidgetModel.updateWidget =
-updateWidget
+updateWidget;
 WidgetModel.deleteWidget =
-deleteWidget
+deleteWidget;
 
 function createWidget(widget) {
-    return WidgetModel.createWidget(widget);
+    return WidgetModel.create(widget);
 }
 
 function findAllWidgetsForPage(pid) {
-    return WidgetModel.findAllWidgetsForPage(pid);
+    return WidgetModel.find({ pageId: pid });
 }
 function findWidgetById(wgid) {
-    return WidgetModel.findWidgetById(wgid);
+    return WidgetModel.findById(wgid);
 }
 
 function updateWidget(wgid, widget) {
-    return WidgetModel.update({ _id: wgid }
+    return WidgetModel.updateOne({ _id: wgid },
         widget);
 }
 
 function deleteWidget(wgid) {
-    return WidgetModel.remove({ _id: wgid});
+    return WidgetModel.deleteOne({ _id: 
+    wgid });
 }
 
 module.exports = WidgetModel;
