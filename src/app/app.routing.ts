@@ -15,6 +15,9 @@ import { PageEditComponent } from "./Components/Page/page-edit/page-edit.compone
 import { WidgetListComponent } from "./Components/Widgets/widget-list/widget-list.component";
 import { WidgetChooserComponent } from "./Components/Widgets/widget-chooser/widget-chooser.component";
 import { WidgetEditComponent } from "./Components/Widgets/widget-edit/widget-edit.component";
+import { AuthGuard } from "src/app/services/auth-guard.service.client";
+import { UserListComponent } from "./Components/User/user-list/user-list.component";
+import { AdminGuard } from "./services/admin-guard.service.client";
 
 // Import all other components here
 
@@ -24,27 +27,52 @@ const APP_ROUTES : Routes = [
 { path: "", component: LoginComponent},
 { path: "login", component: LoginComponent},
 { path: "register", component: RegisterComponent},
-{ path: "user/:uid", component: ProfileComponent},
-{ path: "user/:uid/website", component: WebsiteListComponent},
-{ path: "user/:uid/website/new", component: WebsiteNewComponent},
-{ path: "user/:uid/website/:wid", component: WebsiteEditComponent},
+{ path: "profile", 
+component: ProfileComponent, 
+canActivate: 
+[AuthGuard]},
+{ path: "user/:uid/website", 
+component: WebsiteListComponent, 
+canActivate: [AuthGuard]
+},
+{ path: "user/:uid/website/new", 
+component: WebsiteNewComponent, 
+canActivate: [AuthGuard]
+},
+{ path: "user/:uid/website/:wid", 
+component: WebsiteEditComponent, 
+canActivate: [AuthGuard]
+},
 { path: "user/:uid/website/:wid/page",
-component: PageListComponent},
+component: PageListComponent, 
+canActivate: [AuthGuard]
+},
 { path: "user/:uid/website/:wid/page/new",
-component: PageNewComponent},
+component: PageNewComponent, 
+canActivate: [AuthGuard]
+},
 { path: "user/:uid/website/:wid/page/:pid",
-component: PageEditComponent},
+component: PageEditComponent, 
+canActivate: [AuthGuard]
+},
 { path: "user/:uid/website/:wid/page/:pid/widget",
-component: WidgetListComponent},
+component: WidgetListComponent, 
+canActivate: [AuthGuard]
+},
 { path: "user/:uid/website/:wid/page/:pid/widget/new",
-component: WidgetChooserComponent},
+component: WidgetChooserComponent, 
+canActivate: [AuthGuard]
+},
 { path: "user/:uid/website/:wid/page/:pid/widget/:wgid",
-component: WidgetEditComponent},
-
-
-
-
- // so on
+component: WidgetEditComponent, 
+canActivate: [AuthGuard]
+},
+{
+    path: "user-list",
+    component: UserListComponent,
+    canActivate: [AdminGuard]
+}
+// so on
 ];
 
 // Export the routes as module providers

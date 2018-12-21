@@ -22,8 +22,12 @@ import { WidgetYoutubeComponent } from './Components/Widgets/widget-edit/widget-
 
 import { UserService } from "./services/user.service.client";
 import { WebsiteService } from "./services/website.service.client";
-import { PageService } from"./services/page.service.client";
-import { WidgetService } from"./services/widget.service.client";
+import { PageService } from "./services/page.service.client";
+import { WidgetService } from "./services/widget.service.client";
+import { SharedService } from "./services/shared.service.client";
+import { AuthGuard } from "./services/auth-guard.service.client";
+import { UserListComponent } from "./Components/User/user-list/user-list.component";
+import { AdminGuard } from "./services/admin-guard.service.client";
 
 
 @NgModule({
@@ -43,11 +47,20 @@ import { WidgetService } from"./services/widget.service.client";
     WidgetEditComponent,
     WidgetHeadingComponent,
     WidgetImageComponent,
-    WidgetYoutubeComponent
+    WidgetYoutubeComponent,
+    UserListComponent
   ],
-  imports: [BrowserModule, Routing, FormsModule,
-  HttpModule],
-  providers: [UserService, WebsiteService, PageService, WidgetService],
+  imports: [BrowserModule, Routing, 
+  FormsModule, HttpModule],
+  providers: [
+    UserService, 
+    WebsiteService, 
+    PageService, 
+    WidgetService, 
+    SharedService,
+    AuthGuard,
+    AdminGuard
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
